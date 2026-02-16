@@ -6,9 +6,32 @@ class AppTheme {
     return ThemeData(
       useMaterial3: true,
       scaffoldBackgroundColor: AppColors.background,
-      appBarTheme: AppBarTheme(
-        backgroundColor: AppColors.background,
+      inputDecorationTheme: inputDecorationThemeData(),
+      checkboxTheme: CheckboxThemeData(
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(4)
+        ),
+      ),
+      appBarTheme: AppBarTheme(backgroundColor: AppColors.background),
+      textTheme: TextTheme(),
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: AppColors.secondary,
+          foregroundColor: Colors.white
+        )
       )
+    );
+  }
+
+  static InputDecorationThemeData inputDecorationThemeData() {
+    return InputDecorationThemeData(
+      hintStyle: TextStyle(color: Colors.black38),
+      enabledBorder: OutlineInputBorder(
+        borderSide: BorderSide(color: AppColors.black8),
+      ),
+      border: OutlineInputBorder(
+        borderSide: BorderSide(color: AppColors.black8),
+      ),
     );
   }
 }

@@ -14,4 +14,8 @@ class AppColors {
   static const Color background = Color(0xFFEFF5FF);
   static const Color surface = Colors.white;
   static const Color error = Color(0xFFB00020);
+
+
+  static const black8 = Color(0x14000000);
+  static const gray600 = Color(0xFF3E4B5E);
 }
