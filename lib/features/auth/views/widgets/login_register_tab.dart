@@ -13,21 +13,18 @@ class LoginRegisterTab extends StatelessWidget {
           color: AppColors.background,
           borderRadius: BorderRadius.circular(60),
         ),
-        child: DefaultTabController(
-          length: 2,
-          child: TabBar(
-            indicatorSize: TabBarIndicatorSize.tab,
-            dividerHeight: 0,
-            labelStyle: TextStyle(color: Colors.black),
-            indicator: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(60),
-            ),
-            tabs: [
-              Tab(text: "Login"),
-              Tab(text: "Register"),
-            ],
+        child: TabBar(
+          indicatorSize: TabBarIndicatorSize.tab,
+          dividerHeight: 0,
+          labelStyle: TextStyle(color: Colors.black),
+          indicator: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(60),
           ),
+          tabs: [
+            Tab(text: "Login"),
+            Tab(text: "Register"),
+          ],
         ),
       ),
     );
