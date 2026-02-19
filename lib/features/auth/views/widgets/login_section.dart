@@ -1,4 +1,5 @@
 import 'package:events/config/theme/app_colors.dart';
+import 'package:events/core/constants/app_routes.dart';
 import 'package:events/shared/widgets/field_title.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -39,7 +40,9 @@ class LoginSection extends StatelessWidget {
           SizedBox(
             width: double.maxFinite,
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamed(AppRoutes.verifyOtp);
+              },
               style: ElevatedButton.styleFrom(
                 padding: EdgeInsets.symmetric(vertical: 12),
               ),

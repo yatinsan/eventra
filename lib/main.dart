@@ -1,4 +1,5 @@
-import 'package:events/features/auth/views/login_screen.dart';
+import 'package:events/core/constants/app_routes.dart';
+import 'package:events/core/routes/app_router.dart';
 import 'package:flutter/material.dart';
 
 import 'config/theme/app_theme.dart';
@@ -16,7 +17,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: AppConstants.appName,
       theme: AppTheme.lightTheme,
-      home: LoginScreen(),
+      onGenerateRoute: AppRouter.onGenerateRoute,
+      initialRoute: AppRoutes.login,
     );
   }
 }
