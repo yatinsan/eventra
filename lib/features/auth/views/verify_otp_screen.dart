@@ -1,4 +1,6 @@
 import 'package:events/config/theme/app_colors.dart';
+import 'package:events/core/constants/app_routes.dart';
+import 'package:events/core/routes/app_router.dart';
 import 'package:events/features/auth/views/widgets/logo_text.dart';
 import 'package:events/features/auth/views/widgets/otp_field.dart';
 import 'package:events/shared/app_bg_gradient.dart';
@@ -67,7 +69,10 @@ class VerifyOtpScreen extends StatelessWidget {
                   color: AppColors.gray200,
                 ),
               ),
-              ElevatedButton(onPressed: () {}, child: Text("Verify")),
+              ElevatedButton(onPressed: () {
+                Navigator.of(context).pushNamed(AppRoutes.createPassword);
+
+              }, child: Text("Verify")),
             ],
           ),
         ),
