@@ -17,5 +17,6 @@ class AppColors {
 
 
   static const black8 = Color(0x14000000);
+  static const gray200 = Color(0xFFDEE5EE);
   static const gray600 = Color(0xFF3E4B5E);
 }

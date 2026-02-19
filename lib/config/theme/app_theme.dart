@@ -1,5 +1,6 @@
 import 'package:events/config/theme/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
   static ThemeData get lightTheme {
@@ -8,18 +9,16 @@ class AppTheme {
       scaffoldBackgroundColor: AppColors.background,
       inputDecorationTheme: inputDecorationThemeData(),
       checkboxTheme: CheckboxThemeData(
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(4)
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
       ),
       appBarTheme: AppBarTheme(backgroundColor: AppColors.background),
-      textTheme: TextTheme(),
+      textTheme: GoogleFonts.manropeTextTheme(TextTheme()),
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
           backgroundColor: AppColors.secondary,
-          foregroundColor: Colors.white
-        )
-      )
+          foregroundColor: Colors.white,
+        ),
+      ),
     );
   }
 
