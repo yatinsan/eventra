@@ -1,6 +1,5 @@
 import 'package:events/config/theme/app_colors.dart';
 import 'package:events/core/constants/app_routes.dart';
-import 'package:events/core/routes/app_router.dart';
 import 'package:events/features/auth/views/widgets/logo_text.dart';
 import 'package:events/features/auth/views/widgets/otp_field.dart';
 import 'package:events/shared/app_bg_gradient.dart';
@@ -18,28 +17,28 @@ class VerifyOtpScreen extends StatelessWidget {
         child: SafeArea(
           child: Column(
             children: [
-              Gap(24),
-              LogoText(),
-              Gap(24),
+              const Gap(24),
+              const LogoText(),
+              const Gap(24),
               Container(
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
+                padding: const EdgeInsets.all(10),
+                decoration: const BoxDecoration(
                   color: Colors.white,
                   shape: BoxShape.circle,
                 ),
                 child: SvgPicture.asset("assets/icons/shield_tick.svg"),
               ),
-              Gap(24),
-              Text(
+              const Gap(24),
+              const Text(
                 "Verify account",
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
               ),
-              Gap(12),
-              Text(
+              const Gap(12),
+              const Text(
                 "Please enter the 4-digit OTP sent to ",
                 style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
               ),
-              Text(
+              const Text(
                 "+91 88888 88888.",
                 style: TextStyle(
                   color: Color(0xFF205EFB),
@@ -47,13 +46,13 @@ class VerifyOtpScreen extends StatelessWidget {
                   fontWeight: FontWeight.w500,
                 ),
               ),
-              Gap(24),
+              const Gap(24),
               Container(
                 width: 300,
                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
                 child: OTPField(length: 4, controller: TextEditingController()),
               ),
-              Gap(14),
+              const Gap(14),
               Text.rich(
                 TextSpan(
                   text: "Resend OTP",
@@ -72,7 +71,7 @@ class VerifyOtpScreen extends StatelessWidget {
               ElevatedButton(onPressed: () {
                 Navigator.of(context).pushNamed(AppRoutes.createPassword);
 
-              }, child: Text("Verify")),
+              }, child: const Text("Verify")),
             ],
           ),
         ),
