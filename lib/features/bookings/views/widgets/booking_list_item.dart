@@ -26,53 +26,35 @@ class BookingListItem extends StatelessWidget {
         children: [
           SizedBox(
             width: 60,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                Text(
-                  time,
-                  style: TextStyle(
-                    fontSize: 12,
-                    // color: AppColors.gray500,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-                if (endTime.isNotEmpty) ...[
-                  Spacer(),
+            child: Padding(
+              padding: const EdgeInsets.only(top: 6, bottom: 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
                   Text(
-                    endTime,
+                    time,
                     style: TextStyle(
                       fontSize: 12,
                       // color: AppColors.gray500,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
+                  Gap(4),
+                  if (endTime.isNotEmpty) ...[
+                    Expanded(child: CustomPaint(painter: DottedLinePainter())),
+                    Gap(4),
+                    Text(
+                      endTime,
+                      style: TextStyle(
+                        fontSize: 12,
+                        // color: AppColors.gray500,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ],
                 ],
-              ],
-            ),
-          ),
-          Gap(12),
-          Column(
-            children: [
-              Container(
-                width: 8,
-                height: 8,
-                decoration: BoxDecoration(
-                  // color: AppColors.gray300,
-                  shape: BoxShape.circle,
-                ),
               ),
-              Expanded(child: CustomPaint(painter: DottedLinePainter())),
-              if (endTime.isNotEmpty)
-                Container(
-                  width: 8,
-                  height: 8,
-                  decoration: BoxDecoration(
-                    // color: AppColors.gray300,
-                    shape: BoxShape.circle,
-                  ),
-                ),
-            ],
+            ),
           ),
           Gap(12),
           Expanded(
@@ -80,7 +62,7 @@ class BookingListItem extends StatelessWidget {
               margin: EdgeInsets.only(bottom: 16),
               padding: EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: Color(0xFFF2F6FF), // Light blueish bg
+                color: AppColors.background,
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Column(
@@ -91,14 +73,10 @@ class BookingListItem extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w600,
-                      // color: AppColors.textPrimary,
                     ),
                   ),
                   Gap(4),
-                  Text(
-                    details,
-                    // style: TextStyle(fontSize: 14, color: AppColors.gray500),
-                  ),
+                  Text(details),
                 ],
               ),
             ),

@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       title: AppConstants.appName,
       theme: AppTheme.lightTheme,
       onGenerateRoute: AppRouter.onGenerateRoute,
-      initialRoute: AppRoutes.login,
+      initialRoute: AppRoutes.home,
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:events/core/constants/app_routes.dart';
 import 'package:events/features/auth/views/widgets/logo_text.dart';
 import 'package:events/features/auth/views/widgets/password_field.dart';
 import 'package:events/shared/app_bg_gradient.dart';
@@ -59,6 +60,7 @@ class CreatePasswordScreen extends StatelessWidget {
                       width: double.maxFinite,
                       child: ElevatedButton(
                         onPressed: () {
+                          Navigator.of(context).pushNamed(AppRoutes.home);
                         },
                         style: ElevatedButton.styleFrom(
                           padding: const EdgeInsets.symmetric(vertical: 12),
