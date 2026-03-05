@@ -1,3 +1,5 @@
+import 'package:events/config/theme/app_colors.dart';
+import 'package:events/core/constants/app_routes.dart';
 import 'package:events/features/bookings/views/widgets/booking_calendar.dart';
 import 'package:events/features/bookings/views/widgets/booking_list_item.dart';
 import 'package:events/shared/app_bg_gradient.dart';
@@ -102,15 +104,15 @@ class BookingsScreen extends StatelessWidget {
           ),
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: AppColors.secondary,
+        shape: CircleBorder(),
+        foregroundColor: Colors.white,
+        onPressed: () {
+          Navigator.of(context).pushNamed(AppRoutes.addBookingScreen);
+        },
+        child: Icon(Icons.add),
+      ),
     );
-  }
-}
-
-class BookingsList extends StatelessWidget {
-  const BookingsList({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Placeholder();
   }
 }
