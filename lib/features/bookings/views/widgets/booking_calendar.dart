@@ -132,6 +132,7 @@ class _BookingCalendarState extends State<BookingCalendar> {
               final isCurrentMonth = day.month == _focusedDay.month;
 
               return GestureDetector(
+                behavior: HitTestBehavior.opaque,
                 onTap: () => setState(() => _selectedDay = day),
                 child: Padding(
                   padding: const EdgeInsets.all(2.0),

@@ -4,6 +4,7 @@ import 'package:events/features/addBooking/views/add_booking_screen.dart';
 import 'package:events/features/auth/views/create_password_screen.dart';
 import 'package:events/features/auth/views/login_screen.dart';
 import 'package:events/features/auth/views/verify_otp_screen.dart';
+import 'package:events/features/eventDetails/views/event_details_screen.dart';
 import 'package:events/features/home/views/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -26,6 +27,8 @@ class AppRouter {
             child: const AddBookingScreen(),
           ),
         );
+      case AppRoutes.eventDetailsScreen:
+        return MaterialPageRoute(builder: (_) => const EventDetailsScreen());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(

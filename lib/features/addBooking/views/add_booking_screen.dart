@@ -37,7 +37,7 @@ class AddBookingScreen extends StatelessWidget {
       },
       child: Scaffold(
         appBar: AppBar(
-          title: Text("New Booking"),
+          title: const Text("New Booking"),
           actions: [
             ElevatedButton(
               onPressed: () async {
@@ -48,17 +48,17 @@ class AddBookingScreen extends StatelessWidget {
                   showModalBottomSheet(
                     context: context,
                     builder: (context) {
-                      return AddBookingAmountBottomSheet();
+                      return const AddBookingAmountBottomSheet();
                     },
                   );
                 }
               },
               style: ElevatedButton.styleFrom(
-                visualDensity: VisualDensity(vertical: -2),
+                visualDensity: const VisualDensity(vertical: -2),
               ),
               child: const Text("Save"),
             ),
-            Gap(16),
+            const Gap(16),
           ],
         ),
         body: SingleChildScrollView(
@@ -66,36 +66,40 @@ class AddBookingScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Gap(16),
-              FieldTitle("Title"),
-              Gap(8),
+              const Gap(16),
+              const FieldTitle("Title"),
+              const Gap(8),
               TextField(
                 controller: controller.titleController,
-                decoration: InputDecoration(hintText: "Enter event title"),
+                decoration: const InputDecoration(
+                  hintText: "Enter event title",
+                ),
               ),
-              Gap(16),
-              FieldTitle("Start Date"),
-              Gap(8),
+              const Gap(16),
+              const FieldTitle("Start Date"),
+              const Gap(8),
               TextField(
                 readOnly: true,
                 controller: controller.dateController,
                 onTap: () => controller.pickDate(context),
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: "Select date",
                   suffixIcon: Icon(Icons.calendar_today),
                 ),
               ),
-              Gap(16),
-              FieldTitle("Phone number"),
-              Gap(8),
+              const Gap(16),
+              const FieldTitle("Phone number"),
+              const Gap(8),
               TextField(
                 controller: controller.phoneController,
                 keyboardType: TextInputType.phone,
-                decoration: InputDecoration(hintText: "Enter phone number"),
+                decoration: const InputDecoration(
+                  hintText: "Enter phone number",
+                ),
               ),
-              Gap(16),
-              FieldTitle("Hall"),
-              Gap(8),
+              const Gap(16),
+              const FieldTitle("Hall"),
+              const Gap(8),
               Consumer<AddBookingController>(
                 builder: (context, controller, child) {
                   return DropdownButtonFormField<String>(
@@ -104,13 +108,13 @@ class AddBookingScreen extends StatelessWidget {
                         .map((e) => DropdownMenuItem(value: e, child: Text(e)))
                         .toList(),
                     onChanged: (value) => controller.setHall(value),
-                    decoration: InputDecoration(hintText: "Select hall"),
+                    decoration: const InputDecoration(hintText: "Select hall"),
                   );
                 },
               ),
-              Gap(16),
-              FieldTitle("Slot"),
-              Gap(8),
+              const Gap(16),
+              const FieldTitle("Slot"),
+              const Gap(8),
               Consumer<AddBookingController>(
                 builder: (context, controller, child) {
                   return DropdownButtonFormField<String>(
@@ -119,21 +123,23 @@ class AddBookingScreen extends StatelessWidget {
                         .map((e) => DropdownMenuItem(value: e, child: Text(e)))
                         .toList(),
                     onChanged: (value) => controller.setSlot(value),
-                    decoration: InputDecoration(hintText: "Select slot"),
+                    decoration: const InputDecoration(hintText: "Select slot"),
                   );
                 },
               ),
-              Gap(16),
-              Divider(),
-              Gap(16),
-              FieldTitle("Additional Note"),
-              Gap(8),
+              const Gap(16),
+              const Divider(),
+              const Gap(16),
+              const FieldTitle("Additional Note"),
+              const Gap(8),
               TextField(
                 controller: controller.noteController,
                 maxLines: 4,
-                decoration: InputDecoration(hintText: "Type something..."),
+                decoration: const InputDecoration(
+                  hintText: "Type something...",
+                ),
               ),
-              Gap(16),
+              const Gap(16),
             ],
           ),
         ),
@@ -155,20 +161,20 @@ class BookingDiscardDialog extends StatelessWidget {
           onPressed: () {
             Navigator.of(context).pop(true);
           },
-          child: Text("Discard"),
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.red,
             visualDensity: VisualDensity(vertical: -2),
           ),
+          child: Text("Discard"),
         ),
         ElevatedButton(
           onPressed: () {
             Navigator.of(context).pop();
           },
-          child: Text("Continue Editing"),
           style: ElevatedButton.styleFrom(
             visualDensity: VisualDensity(vertical: -2),
           ),
+          child: Text("Continue Editing"),
         ),
       ],
     );
