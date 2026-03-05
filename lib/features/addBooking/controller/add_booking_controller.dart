@@ -10,13 +10,26 @@ class AddBookingController with ChangeNotifier {
   DateTime? _selectedDate;
   String? _selectedHall;
   String? _selectedSlot;
+  bool _isLoading = false;
 
   final List<String> halls = ["Main Hall", "Mini Hall"];
   final List<String> slots = ["Morning", "Afternoon", "Evening", "Custom"];
 
   DateTime? get selectedDate => _selectedDate;
+
   String? get selectedHall => _selectedHall;
+
   String? get selectedSlot => _selectedSlot;
+
+  bool get isLoading => _isLoading;
+
+  bool get hasChanges =>
+      titleController.text.isNotEmpty ||
+      dateController.text.isNotEmpty ||
+      phoneController.text.isNotEmpty ||
+      noteController.text.isNotEmpty ||
+      _selectedHall != null ||
+      _selectedSlot != null;
 
   void setHall(String? hall) {
     _selectedHall = hall;
@@ -43,7 +56,19 @@ class AddBookingController with ChangeNotifier {
     }
   }
 
-  void submit() {
+  Future<bool> submit() async {
+    if (_isLoading) return false;
+
+    _isLoading = true;
+    notifyListeners();
+
+    try {
+      await Future.delayed(Duration(seconds: 1));
+      return true;
+    } finally {
+      _isLoading = false;
+      notifyListeners();
+    }
   }
 
   @override
