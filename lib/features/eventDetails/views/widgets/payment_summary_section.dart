@@ -1,5 +1,6 @@
 import 'package:events/config/theme/app_colors.dart';
 import 'package:events/config/theme/app_text_styles.dart';
+import 'package:events/features/eventDetails/views/widgets/add_transaction_bottom_sheet.dart';
 import 'package:events/features/eventDetails/views/widgets/amount_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -109,6 +110,25 @@ class PaymentSummarySection extends StatelessWidget {
                     ),
                   ),
                 ],
+              ),
+              Gap(16),
+              SizedBox(
+                width: double.maxFinite,
+                child: OutlinedButton(
+                  onPressed: () {
+                    showModalBottomSheet(
+                      context: context,
+                      builder: (context) => AddTransactionBottomSheet(),
+                    );
+                  },
+                  style: OutlinedButton.styleFrom(
+                    side: BorderSide(color: AppColors.gray300),
+                  ),
+                  child: Text(
+                    "Add New Transaction",
+                    style: AppTextStyle.bodyLarge.copyWith(color: Colors.black),
+                  ),
+                ),
               ),
             ],
           ),

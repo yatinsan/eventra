@@ -7,6 +7,13 @@ class AppTheme {
     return ThemeData(
       useMaterial3: true,
       scaffoldBackgroundColor: AppColors.background,
+      dialogTheme: DialogThemeData(
+        backgroundColor: AppColors.background,
+        surfaceTintColor: AppColors.background,
+      ),
+      colorScheme: ColorScheme.light(
+        surface: AppColors.background
+      ),
       inputDecorationTheme: inputDecorationThemeData(),
       checkboxTheme: CheckboxThemeData(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
