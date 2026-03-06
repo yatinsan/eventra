@@ -39,6 +39,7 @@ dependencies:
   google_fonts:
   intl: ^0.20.2
   provider: ^6.1.5+1
+  flutter_gen: ^5.12.0
 
 dev_dependencies:
   flutter_test:
@@ -50,6 +51,19 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^6.0.0
+  build_runner: ^2.12.2
+  flutter_gen_runner: ^5.13.0
+
+flutter_gen:
+  output: lib/gen/ # Optional (default: lib/gen/)
+    # line_length: 80 # Optional
+
+    # Optional
+  integrations:
+    image: true
+    flutter_svg: true
+#    rive: true
+#    lottie: true
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
